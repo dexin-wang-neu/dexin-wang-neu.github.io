@@ -4,13 +4,56 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2022/05/16/hello-world/"/>
-      <url>/2022/05/16/hello-world/</url>
+      <title>springcloud 简单使用</title>
+      <link href="/2022/05/16/springcloud/"/>
+      <url>/2022/05/16/springcloud/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="1-工程结构"><a href="#1-工程结构" class="headerlink" title="1.工程结构"></a>1.工程结构</h1><p><img src="/img/springcloud/%E6%9E%B6%E6%9E%84.png" alt="image-20220514173827715"></p>]]></content>
       
       
+      <categories>
+          
+          <category> springcloud </category>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> springcloud </tag>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Nginx简单使用</title>
+      <link href="/2022/05/11/nginx/nginx%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/"/>
+      <url>/2022/05/11/nginx/nginx%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-Nginx版本区别"><a href="#1-Nginx版本区别" class="headerlink" title="1.Nginx版本区别"></a>1.Nginx版本区别</h3><ul><li>Nginx开源版  <a href="http://nginx.org/">http://nginx.org/</a></li><li>Nginx plus 商业版   <a href="https://www.nginx.com/">https://www.nginx.com</a></li><li>openresty  <a href="http://openresty.org/cn/">http://openresty.org/cn/</a></li><li>Tengine <a href="http://tengine.taobao.org/">http://tengine.taobao.org</a></li></ul><h3 id="2-源码编译安装"><a href="#2-源码编译安装" class="headerlink" title="2.源码编译安装"></a>2.源码编译安装</h3><ol><li>解压文件：tar zxvf nginx-1.21.6.tar.gz</li><li>切换目录：cd nginx-1.21.6</li><li>安装：.&#x2F;configure –prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx   <em># –prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx 指安装路径是&#x2F;usr&#x2F;local&#x2F;nginx</em></li><li>编译：make</li><li>编译安装：make install</li></ol><h3 id="3-启动与停止"><a href="#3-启动与停止" class="headerlink" title="3. 启动与停止"></a>3. 启动与停止</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./nginx    <span class="comment"># 启动</span></span><br><span class="line">./nginx -s stop <span class="comment">#快速停止</span></span><br><span class="line">./nginx -s quit <span class="comment">#优雅关闭，在退出前完成已经接受的连接请求</span></span><br><span class="line">./nginx -s reload <span class="comment">#重新加载配置</span></span><br></pre></td></tr></table></figure><h3 id="4-安装遇到的问题及解决"><a href="#4-安装遇到的问题及解决" class="headerlink" title="4.安装遇到的问题及解决"></a>4.安装遇到的问题及解决</h3><ul><li>问题1</li></ul><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">checking <span class="keyword">for</span> OS</span><br><span class="line">+ Linux 3.10.0-693.el7.x86_64 x86_64</span><br><span class="line">checking <span class="keyword">for</span> C compiler ... not found</span><br><span class="line">./configure: error: C compiler cc is not found</span><br></pre></td></tr></table></figure><ul><li>解决1</li></ul><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum install -y gcc</span><br></pre></td></tr></table></figure><ul><li><p>问题2</p><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">/configure: error: the HTTP rewrite module requires the PCRE library.</span><br><span class="line">You can either <span class="built_in">disable</span> the module by using --without-http_rewrite_module</span><br><span class="line">option, or install the PCRE library into the system, or build the PCRE library</span><br><span class="line">statically from the <span class="built_in">source</span> with nginx by using --with-pcre=&lt;path&gt; option.</span><br></pre></td></tr></table></figure></li><li><p>解决2</p><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum install -y pcre pcre-devel</span><br></pre></td></tr></table></figure></li><li><p>问题3</p><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./configure: error: the HTTP gzip module requires the zlib library.</span><br><span class="line">You can either <span class="built_in">disable</span> the module by using --without-http_gzip_module</span><br><span class="line">option, or install the zlib library into the system, or build the zlib library</span><br><span class="line">statically from the <span class="built_in">source</span> with nginx by using --with-zlib=&lt;path&gt; option.</span><br></pre></td></tr></table></figure></li><li><p>解决3</p><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum install -y zlib zlib-devel</span><br></pre></td></tr></table></figure></li></ul><h3 id="5-安装成系统服务"><a href="#5-安装成系统服务" class="headerlink" title="5.安装成系统服务"></a>5.安装成系统服务</h3><ul><li><p>创建服务脚本</p><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /usr/lib/systemd/system/nginx.service</span><br></pre></td></tr></table></figure></li><li><p>服务脚本内容</p><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=nginx - web server</span><br><span class="line">After=network.target remote-fs.target nss-lookup.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">PIDFile=/usr/local/nginx/logs/nginx.pid</span><br><span class="line">ExecStartPre=/usr/local/nginx/sbin/nginx -t -c /usr/local/nginx/conf/nginx.conf</span><br><span class="line">ExecStart=/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf</span><br><span class="line">ExecReload=/usr/local/nginx/sbin/nginx -s reload</span><br><span class="line">ExecStop=/usr/local/nginx/sbin/nginx -s stop</span><br><span class="line">ExecQuit=/usr/local/nginx/sbin/nginx -s quit</span><br><span class="line">PrivateTmp=true</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure><p><img src="/./20220511/ngxin%E6%9C%8D%E5%8A%A1%E8%84%9A%E6%9C%AC%E5%86%85%E5%AE%B9" alt="image-20220511100443102"></p></li><li><p>重新加载系统服务</p><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure></li><li><p>启动服务</p><blockquote><p>注意：启动服务之前，把之前通过nginx命令运行起来的服务先关掉，即 nginx -s top</p><p>如果忘记关了，通过  **ps -ef | grep nginx ** 命令查看运行端口，通过 <strong>kill -9 port</strong> 命令杀死进程，之后再运行下面服务启动命令即可</p></blockquote><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl start nginx.service</span><br></pre></td></tr></table></figure></li><li><p>查看服务是否启动</p><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status nginx</span><br></pre></td></tr></table></figure><p>出现：<strong>active（running）</strong>则服务启动</p></li><li><p>设置为开机自启动</p><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> nginx.service</span><br></pre></td></tr></table></figure></li><li></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> nginx </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> nginx </tag>
+            
+        </tags>
       
     </entry>
     
